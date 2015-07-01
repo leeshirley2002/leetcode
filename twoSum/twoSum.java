@@ -1,0 +1,22 @@
+package twoSum;
+
+import java.util.HashMap;
+
+public class twoSum {
+	public int[] solution(int[] numbers, int target){
+		int len =numbers.length;
+		int[] index = new int[2];
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i<len; i++){
+			if (!map.containsKey(numbers[i])){
+				map.put(target-numbers[i], i);
+			}
+			else{
+				index[0]=map.get(numbers[i])+1;
+				index[1]=i+1;
+			}
+		}
+		return index;
+	}
+	
+}
